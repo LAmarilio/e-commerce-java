@@ -11,7 +11,6 @@ Esta é uma solução backend robusta para um sistema de e-commerce que oferece 
 - **Gerenciamento de Pedidos**: Criar, atualizar e rastrear pedidos
 - **Validação de Dados**: Todas as entradas são validadas com regras de negócio
 - **Segurança**: Implementação de Spring Security para proteger endpoints
-- **Documentação Automática**: Swagger/OpenAPI integrado
 
 ## 🛠️ Tecnologias Utilizadas
 
@@ -24,7 +23,6 @@ Esta é uma solução backend robusta para um sistema de e-commerce que oferece 
 | **PostgreSQL** | 18 | Banco de dados relacional |
 | **Hibernate** | - | Mapeamento Objeto-Relacional |
 | **Lombok** | - | Redução de código boilerplate |
-| **SpringDoc OpenAPI** | 2.6.0 | Documentação Swagger/OpenAPI |
 | **Docker** | - | Containerização da aplicação |
 | **Maven** | - | Gerenciador de dependências e build |
 
@@ -136,13 +134,7 @@ A aplicação estará disponível em: `http://localhost:8080`
    mvn spring-boot:run
    ```
 
-## 📚 Documentação da API
-
-Após iniciar o projeto, acesse a documentação interativa do Swagger:
-
-```
-http://localhost:8080/swagger-ui.html
-```
+## 📚 Endpoints da API
 
 ### Principais Endpoints
 
@@ -336,10 +328,12 @@ docker-compose exec db psql -U postgres -d ecommerce_db
    - Extension Pack for Java
    - Spring Boot Extension Pack
    - Lombok Annotations Support
+3. **cURL** ou **HTTP Client**: Ferramentas de linha de comando para requisições
 
 ### Melhorias Futuras
 
 - [ ] Autenticação JWT
+- [ ] Documentação OpenAPI/Swagger
 - [ ] Paginação nos endpoints de listagem
 - [ ] Filtros e busca avançada
 - [ ] Upload de imagens de produtos
