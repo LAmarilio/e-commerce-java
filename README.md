@@ -255,42 +255,6 @@ POST /api/orders/create
 4. **UUID**: Uso de UUIDs em vez de IDs sequenciais para maior segurança
 5. **Relacionamentos Cascata**: Deleção em cascata garante integridade referencial
 
-## 📝 Configuração
-
-### application.yml
-
-```yaml
-spring:
-  application:
-    name: ecommerce-api
-  datasource:
-    url: jdbc:postgresql://db:5432/ecommerce_db
-    username: postgres
-    password: postgres
-  jpa:
-    hibernate:
-      ddl-auto: validate  # Usar 'validate' em produção
-    properties:
-      hibernate:
-        format_sql: true
-        show_sql: false
-
-server:
-  port: 8080
-
-logging:
-  level:
-    org.springframework.security: INFO
-```
-
-## 🧪 Testes
-
-Execute os testes automatizados:
-
-```bash
-mvn test
-```
-
 ## 🐳 Gerenciamento do Docker
 
 ### Verificar containers em execução
@@ -343,50 +307,6 @@ docker-compose exec db psql -U postgres -d ecommerce_db
 - [ ] Testes de integração e unitários completos
 - [ ] CI/CD com GitHub Actions
 - [ ] Deployment em Kubernetes
-
-## 📄 Licença
-
-Este projeto está licenciado sob a MIT License. Veja o arquivo `LICENSE` para mais detalhes.
-
-## 👨‍💻 Autor
-
-**Leonardo**
-
-## 🤝 Contribuindo
-
-Contribuições são bem-vindas! Por favor:
-
-1. Faça um Fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
-5. Abra um Pull Request
-
-## ⚠️ Troubleshooting
-
-### Erro: "conexão recusada ao banco de dados"
-- Certifique-se de que o PostgreSQL está em execução
-- Verifique as credenciais em `application.yml`
-- Se usar Docker, certifique-se de que o container do banco está iniciado
-
-### Erro: "porta 8080 já está em uso"
-```bash
-# Mude a porta em application.yml
-server:
-  port: 8081
-```
-
-### Erro: "migration não foi executada"
-```bash
-# Recrie o banco de dados
-docker-compose down -v
-docker-compose up --build
-```
-
-## 📞 Suporte
-
-Para reportar bugs ou sugerir melhorias, abra uma issue no repositório ou entre em contato com o autor.
-
 ---
 
 **Desenvolvido com ❤️ usando Spring Boot e PostgreSQL**
