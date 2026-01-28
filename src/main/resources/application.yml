@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: ecommerce-api
+
+  datasource:
+    url: jdbc:postgresql://db:5432/ecommerce_db
+    username: postgres
+    password: postgres
+  jpa:
+    hibernate:
+      ddl-auto: validate   # em produção, prefira 'validate' + migrações (Flyway)
+    properties:
+      hibernate:
+        format_sql: true
+        show_sql: false
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org.springframework.security: INFO

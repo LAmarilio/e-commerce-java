@@ -1,0 +1,23 @@
+services:
+  api:
+    build: .
+    ports:
+    - "8080:8080"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:18
+    restart: always
+    ports:
+    - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: ecommerce_db
+    volumes:
+      - db_data:/var/lib/postgresql
+      - ./db.config/init.sql:/docker-entrypoint-initdb.d/init.sql
+
+volumes:
+  db_data:
