@@ -307,6 +307,3 @@ docker-compose exec db psql -U postgres -d ecommerce_db
 - [ ] Testes de integração e unitários completos
 - [ ] CI/CD com GitHub Actions
 - [ ] Deployment em Kubernetes
----
-
-**Desenvolvido com ❤️ usando Spring Boot e PostgreSQL**
